@@ -182,6 +182,7 @@ module Tourmaline
           if multipart
             config = build_form_data_config(params)
             response = client.exec(**config.merge({path: path}))
+            config = {method: ""}
           else
             config = build_json_config(params)
             response = client.exec(**config.merge({path: path}))
